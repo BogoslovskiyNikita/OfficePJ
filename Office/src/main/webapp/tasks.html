@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <nav class="nav justify-content-center" style="position: relative">
+            <div class="col"></div>
+            <div class="col"><a class="nav-link" href="news.html">Новости</a></div>
+            <div class="col"><a class="nav-link" href="documentation.html">Документы</a></div>
+            <div class="col"><a class="nav-link" href="dialogs.html">Чаты</a></div>
+            <div class="col"><a class="nav-link" href="tasks.html">Задания</a></div>
+            <div class="col"><a class="nav-link" href="search.html">Поиск сотрудников</a></div>
+            <div class="col"><a class="nav-link" href="profile.html">Профиль</a></div>
+            <div class="col"><a class="nav-link" href="aboutProject.html">О проекте</a></div>
+            <div class="col"><a class="nav-link" href="login.html">Выйти</a></div>
+
+            <div class="col"></div>
+        </nav>
+    </header>
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <div class="col-12">
+                <div class="button-zone">
+                    <div style="height: 20px"></div>
+                    <div class="row">
+                        <div class="col-6 dropdown" style="text-align: left;">
+                            <button class="btn btn-secondary dropdown-toggle btn-lg" type="button" id="status"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Сортировка
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="status">
+                                <a class="dropdown-item" href="#">Выполненные</a>
+                                <a class="dropdown-item" href="#">Активные</a>
+                                <a class="dropdown-item" href="#">Последние</a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#taskAdd">
+                                Добавить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="tasks-zone">
+
+                    <h5 style="font-size: x-large">Задание</h5>
+                    <h5 style="font-size: large">Описание</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <br>
+                            <br>
+                            <h6>Дата окончания</h6>
+                            <h6>Автор</h6>
+                        </div>
+                        <div class="col-6" style="text-align: right">
+                            <div style="height: 30px"></div>
+                            <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#description">
+                                Подробнее
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="location.href=''">
+                                Выполнено
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="taskAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <br>
+                <h2 class="modal-title">Задание</h2>
+                <form method="post" action="" style="width: 100%">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Выберите сотрудника</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="form-group" style="width: 300px">
+                                <label for="taskDescription">Что нужно сделать?</label>
+                                <textarea class="form-control" id="taskDescription" rows="3" required
+                                          style="width: 300px"></textarea>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="addFile">Прикрепите файл, если это требуется</label>
+                                <input type="file" class="form-control-file" id="addFile">
+                            </div>
+                            <div class="form-group" style="width: 300px">
+                                <label for="inputDate">Дедлайн:</label>
+                                <input type="date" class="form-control" id="inputDate">
+                            </div>
+                            <div style="text-align: center">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                <button type="submit" class="btn btn-primary">Отправить</button>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="description" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <br>
+            <h2 class="modal-title">Задание</h2>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
