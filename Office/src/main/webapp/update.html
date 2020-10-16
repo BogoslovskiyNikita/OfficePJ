@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>News</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -15,8 +15,22 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js">
+
+    </script>
+
+    <style type="text/css">
+        .type {
+            border: 1px solid red;
+        }
+
+        #typeChars, #leftChars {
+            border: 1px solid #ccc;
+            padding: 0 5px;
+        }
+    </style>
 </head>
-<body>
+<body style="overflow-y: hidden">
 <div class="container-fluid">
     <header>
         <nav class="nav justify-content-center" style="position: relative">
@@ -27,38 +41,47 @@
             <div class="col"><a class="nav-link" href="tasks.html">Задания</a></div>
             <div class="col"><a class="nav-link" href="search.html">Поиск сотрудников</a></div>
             <div class="col"><a class="nav-link" href="profile.html">Профиль</a></div>
-            <div class="col"><a class="nav-link" href="#">О проекте</a></div>
+            <div class="col"><a class="nav-link" href="aboutProject.html">О проекте</a></div>
             <div class="col"><a class="nav-link" href="login.html">Выйти</a></div>
             <div class="col"></div>
         </nav>
     </header>
     <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-8">
-            <div class="button-zone">
-                <div style="height: 20px"></div>
-                <button type="submit" class="btn btn-primary btn-lg" onclick="location.href='newsAdd.html'">Добавить
-                </button>
-            </div>
-            <br>
-            <div class="news-zone">
-                <div class="row" style="padding: 20px">
-                    <div class="col-3">
-                        <img src="img/1.jpg" class="imgInBox">
-                    </div>
-                    <div class="col-9">
-                        <p style="font-size: 20px; color: black">К сожалению, нам необходимо перевести большую часть
-                            наших сотрудников на удаленку :(
-                            Пожалуйста, ознакомьтесь, с инструкцией по переводу.</p>
+        <div class="col-6">
+
+            <div class="col-8 offset-4">
+                <div style="height:120px"></div>
+                <div class="name">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="InputName" placeholder="Имя">
                     </div>
                 </div>
+                <div class="position">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="InputPosition" placeholder="Должность">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h2>О себе</h2>
+                <div class="col-12 about">
+                    <br>
+                    <br>
+                    <textarea rows="7" style="width: 100%; background-color: #C4C4C4; border: #C4C4C4"></textarea>
+                </div>
+                <div style="height: 30px"></div>
+                <button type="submit" class="btn btn-primary" onclick="location.href='profile.html'">Сохранить
+                </button>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col-6" style="text-align: center">
+            <div style="height: 150px"></div>
+            <div class="col-8" style="height: 30%">
+                <img src="img/img.jpg" class="imgInBox" alt=""></div>
+            <div style="height: 80px"></div>
+
         </div>
     </div>
-
 </div>
 </body>
 </html>

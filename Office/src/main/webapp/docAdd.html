@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>News</title>
+    <title>Documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -27,7 +27,7 @@
             <div class="col"><a class="nav-link" href="tasks.html">Задания</a></div>
             <div class="col"><a class="nav-link" href="search.html">Поиск сотрудников</a></div>
             <div class="col"><a class="nav-link" href="profile.html">Профиль</a></div>
-            <div class="col"><a class="nav-link" href="#">О проекте</a></div>
+            <div class="col"><a class="nav-link" href="aboutProject.html">О проекте</a></div>
             <div class="col"><a class="nav-link" href="login.html">Выйти</a></div>
             <div class="col"></div>
         </nav>
@@ -36,29 +36,40 @@
         <div class="col-2">
         </div>
         <div class="col-8">
-            <div class="button-zone">
-                <div style="height: 20px"></div>
-                <button type="submit" class="btn btn-primary btn-lg" onclick="location.href='newsAdd.html'">Добавить
-                </button>
-            </div>
+            <div style="height: 20px"></div>
             <br>
-            <div class="news-zone">
-                <div class="row" style="padding: 20px">
-                    <div class="col-3">
-                        <img src="img/1.jpg" class="imgInBox">
+            <div class="add-zone">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8" style="text-align: center">
+                        <form method="post" action="">
+                            <br>
+                            <br>
+                            <br>
+                            <div class="form-group" style="width: 100%">
+                                <label for="nameOfNews"><h3>Заголовок</h3></label>
+                                <input type="text" class="form-control" id="nameOfNews"
+                                       style="height: 60px; width: 100%;">
+                            </div>
+                            <br>
+                            <br>
+                            <div class="form-group">
+                                <label for="newsPh">Добавить файлы</label>
+                                <input type="file" class="form-control-file" id="newsPh">
+                            </div>
+                            <br>
+                            <br>
+                            <button class="btn btn-primary btn-lg" onclick="location.href='documentation.html'">
+                                Добавить
+                            </button>
+                        </form>
                     </div>
-                    <div class="col-9">
-                        <p style="font-size: 20px; color: black">К сожалению, нам необходимо перевести большую часть
-                            наших сотрудников на удаленку :(
-                            Пожалуйста, ознакомьтесь, с инструкцией по переводу.</p>
-                    </div>
+                    <div class="col-2"></div>
                 </div>
             </div>
         </div>
         <div class="col-2">
         </div>
     </div>
-
 </div>
 </body>
-</html>

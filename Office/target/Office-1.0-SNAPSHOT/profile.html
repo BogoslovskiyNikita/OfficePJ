@@ -15,40 +15,20 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="js/script.js">
 
-    <script type="text/javascript">
-        // Функция подсчета количества символов - START
-        function limitChars(myObject, max, typeChars, leftChars) {
-            $(myObject).keydown(function () {
-                var count = $(this).val().length; // кол-во уже введенных символов
-                var num = max - count; // кол-во символов, которое еще можно ввести
+    </script>
 
-                if (num > 0) {
-                    // если не достигнут лимит символов
-                    $(typeChars).text('Введено символов: ' + count);
-                    $(leftChars).text('Можно ввести символов: ' + num);
-                    $(this).removeClass('type');
-                } else {
-                    // если достигнут лимит символов
-                    $(typeChars).text('Введено символов: ' + count);
-                    $(leftChars).text('Достигнут лимит символов');
-                    $(this).addClass('type');
-                }
-            });
+    <style type="text/css">
+        .type {
+            border: 1px solid red;
         }
 
-        // Функция подсчета количества символов - END
-
-        $(document).ready(function () {
-            var myObject = '.limitInput'; // объект, у которого считаем символы
-            var max = 5; // максимум символов
-            var typeChars = '#typeChars'; // куда выводим кол-во введенных символов
-            var leftChars = '#leftChars'; // куда выводим кол-во оставшихся символов
-
-            limitChars(myObject, max, typeChars, leftChars);
-            limitChars('.limitInput', 400, typeChars, leftChars);
-        });
-    </script>
+        #typeChars, #leftChars {
+            border: 1px solid #ccc;
+            padding: 0 5px;
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -83,8 +63,8 @@
         </div>
         <div class="col-6" style="text-align: center">
             <div style="height: 150px"></div>
-            <div class="col-8">
-                <img src="img/img.jpg" style="width: 210px; border-radius: 30px" alt=""></div>
+            <div class="col-8" style="height: 30%">
+                <img src="img/img.jpg" class="imgInBox"  alt=""></div>
             <div style="height: 80px"></div>
             <div class="col-8">
                 <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#taskModal">
@@ -112,7 +92,9 @@
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="taskDescription">Что нужно сделать?</label>
-                            <textarea class="limitinput" id="taskDescription" rows="3" required></textarea>
+                            <textarea autocomplete="off" oninput="getCount()" type="text" class="form-control" name="h1"
+                                      id="taskDescription" rows="3" required></textarea>
+                            <p class="inform-text">Количество оставшихся символов: <span id="count"></span></p>
                         </div>
                         <br>
                         <div class="form-group">
@@ -126,11 +108,10 @@
                         <div style="height: 50px"></div>
                         <div style="text-align: center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <button type="button" id="submit-button" class="btn btn-primary">Отправить</button>
                         </div>
                     </form>
-                    <p><span id="typeChars"></span></p>
-                    <p><span id="leftChars"></span></p>
+
                 </div>
                 <div class="col-2"></div>
             </div>

@@ -11,7 +11,7 @@
 
 }
 
-.helper{
+.helper {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -35,7 +35,7 @@ body {
 }
 
 .top2 {
-    height: 150px;
+    height: 60px;
 }
 
 header {
@@ -109,7 +109,6 @@ header {
 
 .news-zone {
     background-color: #C4C4C4;
-    height: 100%
 }
 
 .add-zone {
@@ -129,4 +128,27 @@ header {
 
 #carouselExampleIndicators {
     z-index: -2;
+}
+
+.imgInBox {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nameInSearch {
+    font-size: 20px;
+    color: black;
+}
+
+.nameInSearch:hover {
+    text-decoration: none;
+}
+
+.borderAround {
+    background-color: #C4C4C4;
+    border-radius: 5%;
+    margin-right: 10px;
+    margin-left: 10px;
+
 }

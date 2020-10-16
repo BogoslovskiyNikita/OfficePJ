@@ -1,6 +1,9 @@
 var maxCount = 400;
 var redCount = 3;
+var input = $("#taskDescription");
+
 $("#count").text(maxCount);
+
 function getCount() {
     var count = maxCount - $("#taskDescription").val().length;
     $("#count").text(count);
@@ -13,7 +16,7 @@ function getCount() {
     if (count <= 0) {
         $("#submit-button").addClass("disabled");
         $("#submit-button").text("Недоступно");
-    } else if (count > 0 &&  $("#submit-button").hasClass("disabled")) {
+    } else if (count > 0 && $("#submit-button").hasClass("disabled")) {
         $("#submit-button").removeClass("disabled");
         $("#submit-button").text("Отправить");
     }
