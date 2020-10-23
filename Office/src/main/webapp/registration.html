@@ -65,7 +65,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="login">Логин</span>
                             </div>
-                            <input type="text" pattern="^[a-zA-Z0-9]+$" class="form-control"
+                            <input type="text" pattern="^[a-zA-Z](.[a-zA-Z0-9_-]*)" class="form-control"
                                    aria-label="Sizing example input"
                                    aria-describedby="login" required>
                         </div>
@@ -74,7 +74,7 @@
                                 <span class="input-group-text" id="email">Почта</span>
                             </div>
                             <input type="email"
-                                   pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                                   pattern="^([a-zA-Z0-9_-]+\.)*[a-zA-Z0-9_-]+@[a-z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-z]{2,6}$"
                                    class="form-control"
                                    aria-label="Sizing example input"
                                    aria-describedby="email" required>
@@ -83,16 +83,18 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="password">Пароль</span>
                             </div>
-                            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" class="form-control"
+                            <input type="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+                                   class="form-control"
                                    aria-label="Sizing example input"
                                    aria-describedby="password" required>
-                            <span>Пароль должен содержать больше 8 символов, при этом должна быть хотя бы одна цифра или буква</span>
+                            <span>Пароль должен содержать cтрочные и прописные латинские буквы, цифры</span>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="conPassword">Повторите пароль</span>
                             </div>
-                            <input type="password" class="form-control" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                            <input type="password" class="form-control"
+                                   pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
                                    aria-label="Sizing example input"
                                    aria-describedby="conPassword" required>
                         </div>
