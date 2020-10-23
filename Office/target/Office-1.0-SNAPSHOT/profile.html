@@ -14,7 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js">
 
     </script>
@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body>
+<body style="overflow-y: hidden">
 <div class="container-fluid">
     <header>
         <nav class="nav justify-content-center" style="position: relative">
@@ -55,16 +55,19 @@
                 <div class="position">акционер</div>
                 <br>
                 <br>
+                <h2>О себе</h2>
                 <div class="col-12 about">
                 </div>
                 <div style="height: 30px"></div>
-                <button type="submit" class="btn btn-primary">Редактировать профиль</button>
+                <button type="submit" class="btn btn-primary" onclick="location.href='update.html'">Редактировать
+                    профиль
+                </button>
             </div>
         </div>
         <div class="col-6" style="text-align: center">
             <div style="height: 150px"></div>
             <div class="col-8" style="height: 30%">
-                <img src="img/img.jpg" class="imgInBox"  alt=""></div>
+                <img src="img/img.jpg" class="imgInBox" alt=""></div>
             <div style="height: 80px"></div>
             <div class="col-8">
                 <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#taskModal">

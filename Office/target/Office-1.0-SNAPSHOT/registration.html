@@ -14,12 +14,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
- <style>
-     input:focus:invalid, input:invalid {
-         border:1px solid red;
-     }
- </style>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        input:focus:invalid {
+            border: 1px solid red;
+        }
+    </style>
+
 </head>
 <body>
 <div class="container-fluid helper">
@@ -45,7 +46,7 @@
             <br>
             <h3>Регистрация</h3>
             <div class="col-12 top2"></div>
-            <form method="post" action="">
+            <form method="post" action="" name="myForm">
 
                 <div class="row">
                     <div class="col-1"></div>
@@ -54,29 +55,36 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Фамилия и Имя</span>
                             </div>
-                            <input type="text" aria-label="Last name" class="form-control" required>
-                            <input type="text" aria-label="First name" class="form-control" required>
+                            <input type="text" pattern="^[а-яА-ЯёЁa-zA-Z]+$" aria-label="Last name" class="form-control"
+                                   name="lastName" required>
+                            <input pattern="^[а-яА-ЯёЁa-zA-Z]+$" type="text" aria-label="First name"
+                                   class="form-control" name="firstName" required>
                         </div>
                         <br>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="login">Логин</span>
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input"
+                            <input type="text" pattern="^[a-zA-Z0-9]+$" class="form-control"
+                                   aria-label="Sizing example input"
                                    aria-describedby="login" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="email">Почта</span>
                             </div>
-                            <input type="email" pattern="\S+@[a-z]+.[a-z]+" class="form-control" aria-label="Sizing example input"
+                            <input type="email"
+                                   pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                                   class="form-control"
+                                   aria-label="Sizing example input"
                                    aria-describedby="email" required>
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="password">Пароль</span>
                             </div>
-                            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" class="form-control" aria-label="Sizing example input"
+                            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" class="form-control"
+                                   aria-label="Sizing example input"
                                    aria-describedby="password" required>
                             <span>Пароль должен содержать больше 8 символов, при этом должна быть хотя бы одна цифра или буква</span>
                         </div>
@@ -84,12 +92,13 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="conPassword">Повторите пароль</span>
                             </div>
-                            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" class="form-control" aria-label="Sizing example input"
+                            <input type="password" class="form-control" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                                   aria-label="Sizing example input"
                                    aria-describedby="conPassword" required>
                         </div>
 
                         <br>
-                        <button type="submit" class="btn btn-primary btn-lg" onsubmit="return validate()">
+                        <button type="submit" class="btn btn-primary btn-lg">
                             Войти
                         </button>
                     </div>

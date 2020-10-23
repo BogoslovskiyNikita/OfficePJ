@@ -14,7 +14,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/autocomplete2.js">
+    </script>
 </head>
 <body>
 <div class="container-fluid">
@@ -35,23 +37,54 @@
     <br>
     <div class="row">
         <div class="col-2"></div>
-        <div class="col-2">
-            <input type="search" class="form-control ds-input" id="search-input" placeholder="Search..."
-                   aria-label="Search for..." autocomplete="off" data-docs-version="4.5" spellcheck="false"
-                   role="combobox"
-                   aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto"
-                   style="position: relative; vertical-align: top;">
-        </div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="autocomplete">
+                <form class="form-inline" autocomplete="off" >
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Поиск"
+                           aria-label="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Поиск</button>
+                </form>
+            </div>
+        </nav>
         <div class="col-8"></div>
     </div>
     <div class="row">
-        <div class="col-1">
-        </div>
-        <div class="col-10">
+        <div class="col-11">
             <br>
             <br>
             <div class="row">
-                <div class="col-1"></div>
+                <div class="col-3 offset-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Отдел кадров
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                            Финансовый отдел
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">
+                            Административный отдел
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                        <label class="form-check-label" for="defaultCheck4">
+                            Отдел маркетинга
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                        <label class="form-check-label" for="defaultCheck5">
+                            Отдел закупок
+                        </label>
+                    </div>
+                </div>
                 <div class="col borderAround" style="text-align: center">
                     <br>
                     <div class="col" style="height: 300px">

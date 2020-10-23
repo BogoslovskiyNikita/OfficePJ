@@ -1,6 +1,7 @@
 var maxCount = 400;
 var redCount = 3;
-var input = document.getElementById("#taskDescription");
+var input = $("#taskDescription");
+
 $("#count").text(maxCount);
 
 function getCount() {
@@ -13,7 +14,6 @@ function getCount() {
         $("#submit-button").removeClass("disabled");
     }
     if (count <= 0) {
-        input.setAttribute("maxLength", "400");
         $("#submit-button").addClass("disabled");
         $("#submit-button").text("Недоступно");
     } else if (count > 0 && $("#submit-button").hasClass("disabled")) {
