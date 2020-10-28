@@ -15,9 +15,11 @@ function getCount() {
     }
     if (count <= 0) {
         $("#submit-button").addClass("disabled");
+        $("#submit-button").attr("disabled", true);
         $("#submit-button").text("Недоступно");
     } else if (count > 0 && $("#submit-button").hasClass("disabled")) {
         $("#submit-button").removeClass("disabled");
+        $("#submit-button").attr("disabled", false);
         $("#submit-button").text("Отправить");
     }
 }
